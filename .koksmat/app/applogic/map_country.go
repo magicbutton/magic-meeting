@@ -10,8 +10,8 @@ package applogic
 import (
 	//"encoding/json"
 	//"time"
-	"github.com/magicbutton/magic-people/database"
-	"github.com/magicbutton/magic-people/services/models/countrymodel"
+	"github.com/magicbutton/magic-meeting/database"
+	"github.com/magicbutton/magic-meeting/services/models/countrymodel"
    
 )
 

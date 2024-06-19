@@ -11,9 +11,9 @@ package user
 import (
     "log"
     "strconv"
-    "github.com/magicbutton/magic-people/applogic"
-    "github.com/magicbutton/magic-people/database"
-    "github.com/magicbutton/magic-people/services/models/usermodel"
+    "github.com/magicbutton/magic-meeting/applogic"
+    "github.com/magicbutton/magic-meeting/database"
+    "github.com/magicbutton/magic-meeting/services/models/usermodel"
 
 )
 

@@ -11,10 +11,10 @@ package country
 import (
     "log"
 
-    "github.com/magicbutton/magic-people/applogic"
-    "github.com/magicbutton/magic-people/database"
-    "github.com/magicbutton/magic-people/services/models/countrymodel"
-    . "github.com/magicbutton/magic-people/utils"
+    "github.com/magicbutton/magic-meeting/applogic"
+    "github.com/magicbutton/magic-meeting/database"
+    "github.com/magicbutton/magic-meeting/services/models/countrymodel"
+    . "github.com/magicbutton/magic-meeting/utils"
 )
 
 func CountrySearch(query string) (*Page[countrymodel.Country], error) {

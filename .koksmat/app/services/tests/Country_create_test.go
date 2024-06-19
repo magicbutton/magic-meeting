@@ -9,8 +9,8 @@ keep: false
     package tests
     import (
         "testing"
-        "github.com/magicbutton/magic-people/services/endpoints/country"
-                    "github.com/magicbutton/magic-people/services/models/countrymodel"
+        "github.com/magicbutton/magic-meeting/services/endpoints/country"
+                    "github.com/magicbutton/magic-meeting/services/models/countrymodel"
         "github.com/stretchr/testify/assert"
     )
     
