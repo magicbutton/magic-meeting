@@ -1,6 +1,6 @@
 "use client";
 
-import SearchPerson from "@/app/magic/services/magic-people/person/components/search";
+import SearchPerson from "@/app/magic/services/magic-meeting/person/components/search";
 import { useRouter } from "next/navigation";
 import { APPNAME } from "../global";
 

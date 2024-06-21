@@ -155,15 +155,12 @@ baseattributes:
 entities:
   tenant: &tenant
     name: tenant
-    description: User
-    baselineattributes:
-      - name: name
+
+    baselineattributes: *recordAttributes
+    additionalattributes:
+      - name: email
         type: string
         required: true
-      - name: description
-        type: string
-        required: false
-    additionalattributes:
 
   user: &user
     name: user

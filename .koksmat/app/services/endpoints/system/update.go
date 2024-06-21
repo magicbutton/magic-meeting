@@ -9,17 +9,16 @@ keep: false
 package system
 
 import (
-    "log"
+	"log"
 
-    "github.com/magicbutton/magic-people/applogic"
-    "github.com/magicbutton/magic-people/database"
-    "github.com/magicbutton/magic-people/services/models/systemmodel"
-
+	"github.com/magicbutton/magic-meeting/applogic"
+	"github.com/magicbutton/magic-meeting/database"
+	"github.com/magicbutton/magic-meeting/services/models/systemmodel"
 )
 
 func SystemUpdate(item systemmodel.System) (*systemmodel.System, error) {
-    log.Println("Calling Systemupdate")
+	log.Println("Calling Systemupdate")
 
-    return applogic.Update[database.System, systemmodel.System](item.ID,item, applogic.MapSystemIncoming, applogic.MapSystemOutgoing)
+	return applogic.Update[database.System, systemmodel.System](item.ID, item, applogic.MapSystemIncoming, applogic.MapSystemOutgoing)
 
 }

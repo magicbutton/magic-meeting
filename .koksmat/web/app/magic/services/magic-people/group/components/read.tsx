@@ -16,7 +16,7 @@ export default function ReadGroup(props: { id: number }) {
   const { id } = props;
   const [transactionId, settransactionId] = useState(0);
   const readResult = useService<GroupItem>(
-    "magic-people.group",
+    "magic-meeting.group",
     ["read", id?.toString()],
     "",
     6000,

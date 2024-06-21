@@ -7,9 +7,9 @@ keep: false
 
 */
 import { useContext } from "react";
-import { AppProvider } from "./components/appcontextprovider";
-import AppLeftRail from "./components/appleftrail";
-import AppTopMenu from "./components/apptopmenu";
+import { AppProvider } from "@/components/appcontextprovider";
+import AppLeftRail from "@/components/appleftrail";
+import AppTopMenu from "@/components/apptopmenu";
 import { MagicboxContext } from "@/app/koksmat/magicbox-context";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -53,7 +53,7 @@ export default function Layout(props: { children: any }) {
         <div className="p-2 text-white font-extralight text-2xl  md:text-4xl mt-3 ml-10 md:mt-2 md:ml-0 w-full">
           <div className="flex">
             <div>
-              <Link href="/">{"master"}</Link>
+              <Link href="/">meetings</Link>
             </div>
             <div className="grow"></div>
             <div>

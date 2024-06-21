@@ -9,17 +9,17 @@ keep: false
 package relation
 
 import (
-    "log"
+	"log"
 
-    "github.com/magicbutton/magic-people/applogic"
-    "github.com/magicbutton/magic-people/database"
-    "github.com/magicbutton/magic-people/services/models/relationmodel"
-    . "github.com/magicbutton/magic-people/utils"
+	"github.com/magicbutton/magic-meeting/applogic"
+	"github.com/magicbutton/magic-meeting/database"
+	"github.com/magicbutton/magic-meeting/services/models/relationmodel"
+	. "github.com/magicbutton/magic-meeting/utils"
 )
 
 func RelationSearch(query string) (*Page[relationmodel.Relation], error) {
-    log.Println("Calling Relationsearch")
+	log.Println("Calling Relationsearch")
 
-    return applogic.Search[database.Relation, relationmodel.Relation]("searchindex", query, applogic.MapRelationOutgoing)
+	return applogic.Search[database.Relation, relationmodel.Relation]("searchindex", query, applogic.MapRelationOutgoing)
 
 }

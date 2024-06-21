@@ -18,6 +18,7 @@ export interface TenantItem  {
     updated_by: string;
         name : string ;
     description : string ;
+    email : string ;
 
 }
 
@@ -27,6 +28,7 @@ export const TenantSchema = z.object({
    
         name : z.string(), 
     description : z.string().optional(), 
+    email : z.string(), 
 
 });
 

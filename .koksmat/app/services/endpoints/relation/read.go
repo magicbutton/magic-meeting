@@ -9,18 +9,18 @@ keep: false
 package relation
 
 import (
-    "log"
-    "strconv"
-    "github.com/magicbutton/magic-people/applogic"
-    "github.com/magicbutton/magic-people/database"
-    "github.com/magicbutton/magic-people/services/models/relationmodel"
+	"log"
+	"strconv"
 
+	"github.com/magicbutton/magic-meeting/applogic"
+	"github.com/magicbutton/magic-meeting/database"
+	"github.com/magicbutton/magic-meeting/services/models/relationmodel"
 )
 
 func RelationRead(arg0 string) (*relationmodel.Relation, error) {
-    id,_ := strconv.Atoi(arg0)
-    log.Println("Calling Relationread")
+	id, _ := strconv.Atoi(arg0)
+	log.Println("Calling Relationread")
 
-    return applogic.Read[database.Relation, relationmodel.Relation](id, applogic.MapRelationOutgoing)
+	return applogic.Read[database.Relation, relationmodel.Relation](id, applogic.MapRelationOutgoing)
 
 }

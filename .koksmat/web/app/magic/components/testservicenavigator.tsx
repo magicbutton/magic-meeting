@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/app/koksmat/utils";
-import { AppMap } from "../services/magic-people";
+import { AppMap } from "../services/magic-meeting";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 

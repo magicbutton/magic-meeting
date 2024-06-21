@@ -16,9 +16,9 @@ import (
 
 	"github.com/swaggest/usecase"
 
-	"github.com/magicbutton/magic-people/execution"
-	"github.com/magicbutton/magic-people/schemas"
-	"github.com/magicbutton/magic-people/utils"
+	"github.com/magicbutton/magic-meeting/execution"
+	"github.com/magicbutton/magic-meeting/schemas"
+	"github.com/magicbutton/magic-meeting/utils"
 )
 
 func AnalyseParseUsersPost() usecase.Interactor {
@@ -31,12 +31,12 @@ func AnalyseParseUsersPost() usecase.Interactor {
 			return inputErr
 		}
 
-		inputErr = os.WriteFile(path.Join(utils.WorkDir("magic-people"), "userssample.json"), body, 0644)
+		inputErr = os.WriteFile(path.Join(utils.WorkDir("magic-meeting"), "userssample.json"), body, 0644)
 		if inputErr != nil {
 			return inputErr
 		}
 
-		_, err := execution.ExecutePowerShell("john", "*", "magic-people", "30-analyse", "10-parse-users.ps1", "")
+		_, err := execution.ExecutePowerShell("john", "*", "magic-meeting", "30-analyse", "10-parse-users.ps1", "")
 		if err != nil {
 			return err
 		}

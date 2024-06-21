@@ -23,8 +23,11 @@ type Tenant struct {
 	UpdatedAt      time.Time `bun:",nullzero,notnull,default:current_timestamp"`
 	UpdatedBy      string `bun:"updated_by,"`
 	DeletedAt      time.Time `bun:",soft_delete,nullzero"`
-        Name string `bun:"name"`
+        Tenant string `bun:"tenant"`
+    Searchindex string `bun:"searchindex"`
+    Name string `bun:"name"`
     Description string `bun:"description"`
+    Email string `bun:"email"`
 
 }
 

@@ -17,7 +17,7 @@ export default function UpdateCountry(props: { id: number }) {
 
   const [transactionId, settransactionId] = useState(0);
   const readResult = useService<CountryItem>(
-    "magic-people.country",
+    "magic-meeting.country",
     ["read", id?.toString()],
     "",
     6000,

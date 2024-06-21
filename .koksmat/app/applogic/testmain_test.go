@@ -10,7 +10,7 @@ import (
 	"github.com/uptrace/bun/dialect/pgdialect"
 	"github.com/uptrace/bun/driver/pgdriver"
 
-	"github.com/magicbutton/magic-people/utils"
+	"github.com/magicbutton/magic-meeting/utils"
 )
 
 func TestMain(m *testing.M) {

@@ -59,7 +59,7 @@ export function TenantForm(props : {tenant: TenantItem,editmode:"create"|"update
  name="name"
  render={({ field }) => (
    <FormItem>
-     <FormLabel>name</FormLabel>
+     <FormLabel>Name</FormLabel>
      <FormControl>
        <Input placeholder="" {...field} />
 
@@ -76,7 +76,24 @@ export function TenantForm(props : {tenant: TenantItem,editmode:"create"|"update
  name="description"
  render={({ field }) => (
    <FormItem>
-     <FormLabel>description</FormLabel>
+     <FormLabel>Description</FormLabel>
+     <FormControl>
+       <Input placeholder="" {...field} />
+
+     </FormControl>
+     <FormDescription>
+       
+     </FormDescription>
+     <FormMessage />
+   </FormItem>
+ )}
+/>
+    {/* string */}<FormField
+ control={form.control}
+ name="email"
+ render={({ field }) => (
+   <FormItem>
+     <FormLabel>email</FormLabel>
      <FormControl>
        <Input placeholder="" {...field} />
 

@@ -25,6 +25,7 @@ func MapTenantOutgoing(db database.Tenant) tenantmodel.Tenant {
         UpdatedBy: db.UpdatedBy,
                 Name : db.Name,
         Description : db.Description,
+        Email : db.Email,
 
     }
 }
@@ -38,6 +39,7 @@ func MapTenantIncoming(in tenantmodel.Tenant) database.Tenant {
         UpdatedBy: in.UpdatedBy,
                 Name : in.Name,
         Description : in.Description,
+        Email : in.Email,
         Searchindex : in.Name,
 
     }

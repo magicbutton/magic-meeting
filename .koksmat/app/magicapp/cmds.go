@@ -12,8 +12,8 @@ import (
 	"github.com/swaggest/rest/web"
 	swgui "github.com/swaggest/swgui/v4emb"
 
-	"github.com/magicbutton/magic-people/endpoints"
-	"github.com/magicbutton/magic-people/utils"
+	"github.com/magicbutton/magic-meeting/endpoints"
+	"github.com/magicbutton/magic-meeting/utils"
 )
 
 func StartAPIServer(title string, version string, description string, port int) {

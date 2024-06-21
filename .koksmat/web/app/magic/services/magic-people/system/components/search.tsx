@@ -33,7 +33,7 @@ export default function SearchSystem(props: {
     return { text: "" };
   }, []);
   const searchResult = useService<Root>(
-    "magic-people.system",
+    "magic-meeting.system",
     ["search", "%" + search.text + "%"],
     "",
     6000,

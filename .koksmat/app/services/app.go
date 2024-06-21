@@ -11,8 +11,8 @@ package services
 import (
 	"encoding/json"
 
-	"github.com/magicbutton/magic-people/services/endpoints/app"
-	. "github.com/magicbutton/magic-people/utils"
+	"github.com/magicbutton/magic-meeting/services/endpoints/app"
+	. "github.com/magicbutton/magic-meeting/utils"
 	"github.com/nats-io/nats.go/micro"
 )
 

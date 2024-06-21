@@ -15,19 +15,19 @@ import (
 	"os"
 	"path"
 
-	"github.com/magicbutton/magic-people/execution"
-	"github.com/magicbutton/magic-people/schemas"
-	"github.com/magicbutton/magic-people/utils"
+	"github.com/magicbutton/magic-meeting/execution"
+	"github.com/magicbutton/magic-meeting/schemas"
+	"github.com/magicbutton/magic-meeting/utils"
 )
 
 func UsecasesGetGroupsPost(ctx context.Context, args []string) (*schemas.AllGroups, error) {
 
-	result, pwsherr := execution.ExecutePowerShell("john", "*", "magic-people", "05-usecases", "10-get-groups.ps1", "")
+	result, pwsherr := execution.ExecutePowerShell("john", "*", "magic-meeting", "05-usecases", "10-get-groups.ps1", "")
 	if pwsherr != nil {
 		return nil, pwsherr
 	}
 
-	resultingFile := path.Join(utils.WorkDir("magic-people"), "all-groups.json")
+	resultingFile := path.Join(utils.WorkDir("magic-meeting"), "all-groups.json")
 	data, err := os.ReadFile(resultingFile)
 	if err != nil {
 		return nil, err

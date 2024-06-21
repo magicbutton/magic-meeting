@@ -33,7 +33,7 @@ export default function SearchRelation(props: {
     return { text: "" };
   }, []);
   const searchResult = useService<Root>(
-    "magic-people.relation",
+    "magic-meeting.relation",
     ["search", "%" + search.text + "%"],
     "",
     6000,

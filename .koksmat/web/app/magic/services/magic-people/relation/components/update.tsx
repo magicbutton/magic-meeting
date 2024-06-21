@@ -17,7 +17,7 @@ export default function UpdateRelation(props: { id: number }) {
 
   const [transactionId, settransactionId] = useState(0);
   const readResult = useService<RelationItem>(
-    "magic-people.relation",
+    "magic-meeting.relation",
     ["read", id?.toString()],
     "",
     6000,

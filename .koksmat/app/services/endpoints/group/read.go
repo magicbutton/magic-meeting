@@ -9,18 +9,18 @@ keep: false
 package group
 
 import (
-    "log"
-    "strconv"
-    "github.com/magicbutton/magic-people/applogic"
-    "github.com/magicbutton/magic-people/database"
-    "github.com/magicbutton/magic-people/services/models/groupmodel"
+	"log"
+	"strconv"
 
+	"github.com/magicbutton/magic-meeting/applogic"
+	"github.com/magicbutton/magic-meeting/database"
+	"github.com/magicbutton/magic-meeting/services/models/groupmodel"
 )
 
 func GroupRead(arg0 string) (*groupmodel.Group, error) {
-    id,_ := strconv.Atoi(arg0)
-    log.Println("Calling Groupread")
+	id, _ := strconv.Atoi(arg0)
+	log.Println("Calling Groupread")
 
-    return applogic.Read[database.Group, groupmodel.Group](id, applogic.MapGroupOutgoing)
+	return applogic.Read[database.Group, groupmodel.Group](id, applogic.MapGroupOutgoing)
 
 }

@@ -9,17 +9,16 @@ keep: false
 package person
 
 import (
-    "log"
-   
-    "github.com/magicbutton/magic-people/applogic"
-    "github.com/magicbutton/magic-people/database"
-    "github.com/magicbutton/magic-people/services/models/personmodel"
+	"log"
 
+	"github.com/magicbutton/magic-meeting/applogic"
+	"github.com/magicbutton/magic-meeting/database"
+	"github.com/magicbutton/magic-meeting/services/models/personmodel"
 )
 
 func PersonCreate(item personmodel.Person) (*personmodel.Person, error) {
-    log.Println("Calling Personcreate")
+	log.Println("Calling Personcreate")
 
-    return applogic.Create[database.Person, personmodel.Person](item, applogic.MapPersonIncoming, applogic.MapPersonOutgoing)
+	return applogic.Create[database.Person, personmodel.Person](item, applogic.MapPersonIncoming, applogic.MapPersonOutgoing)
 
 }

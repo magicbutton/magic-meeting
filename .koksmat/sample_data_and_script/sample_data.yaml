@@ -1,0 +1,185 @@
+buildings:
+- address: Copenhagen, Denmark
+  description: Building 2 in KB610
+  id: 1
+  name: Building 2
+  site_id: 2
+- address: Copenhagen, Denmark
+  description: Building 3 in KB610
+  id: 2
+  name: Building 3
+  site_id: 2
+- address: Milan, Italy
+  description: Building in HQ
+  id: 3
+  name: Building 1
+  site_id: 1
+- address: Oslo, Norway
+  description: Building in Site1
+  id: 4
+  name: Building 1
+  site_id: 3
+- address: Cape Town, South Africa
+  description: Building in Site2
+  id: 5
+  name: Building 1
+  site_id: 4
+- address: Berlin, Germany
+  description: Building in Site3
+  id: 6
+  name: Building 1
+  site_id: 5
+- address: Paris, France
+  description: Building in Site4
+  id: 7
+  name: Building 1
+  site_id: 6
+- address: Madrid, Spain
+  description: Building in Site5
+  id: 8
+  name: Building 1
+  site_id: 7
+- address: Stockholm, Sweden
+  description: Building in Site6
+  id: 9
+  name: Building 1
+  site_id: 8
+- address: Helsinki, Finland
+  description: Building in Site7
+  id: 10
+  name: Building 1
+  site_id: 9
+- address: Amsterdam, Netherlands
+  description: Building in Site8
+  id: 11
+  name: Building 1
+  site_id: 10
+countries:
+- code: 'NO'
+  description: Country in Northern Europe
+  id: 1
+  name: Norway
+- code: DK
+  description: Country in Northern Europe
+  id: 2
+  name: Denmark
+- code: IT
+  description: Country in Southern Europe
+  id: 3
+  name: Italy
+- code: ZA
+  description: Country in Southern Africa
+  id: 4
+  name: South Africa
+- code: DE
+  description: Country in Central Europe
+  id: 5
+  name: Germany
+- code: FR
+  description: Country in Western Europe
+  id: 6
+  name: France
+- code: ES
+  description: Country in Southern Europe
+  id: 7
+  name: Spain
+- code: SE
+  description: Country in Northern Europe
+  id: 8
+  name: Sweden
+- code: FI
+  description: Country in Northern Europe
+  id: 9
+  name: Finland
+- code: NL
+  description: Country in Western Europe
+  id: 10
+  name: Netherlands
+floors:
+- building: Building 2
+  building_id: 1
+  id: 1
+  name: Floor 1
+- building: Building 2
+  building_id: 1
+  id: 2
+  name: Floor 2
+- building: Building 2
+  building_id: 1
+  id: 3
+  name: Floor 3
+- building: Building 3
+  building_id: 2
+  id: 4
+  name: Floor 1
+- building: Building 3
+  building_id: 2
+  id: 5
+  name: Floor 2
+- building: Building 3
+  building_id: 2
+  id: 6
+  name: Floor 3
+- building: Building 1
+  building_id: 3
+  id: 7
+  name: Floor 1
+- building: Building 1
+  building_id: 3
+  id: 8
+  name: Floor 2
+- building: Building 1
+  building_id: 3
+  id: 9
+  name: Floor 3
+sites:
+- address: Milan, Italy
+  country_id: 3
+  description: Headquarters
+  id: 1
+  name: HQ
+- address: Copenhagen, Denmark
+  country_id: 2
+  description: Main office
+  id: 2
+  name: KB610
+- address: Oslo, Norway
+  country_id: 1
+  description: Office
+  id: 3
+  name: Site1
+- address: Cape Town, South Africa
+  country_id: 4
+  description: Office
+  id: 4
+  name: Site2
+- address: Berlin, Germany
+  country_id: 5
+  description: Office
+  id: 5
+  name: Site3
+- address: Paris, France
+  country_id: 6
+  description: Office
+  id: 6
+  name: Site4
+- address: Madrid, Spain
+  country_id: 7
+  description: Office
+  id: 7
+  name: Site5
+- address: Stockholm, Sweden
+  country_id: 8
+  description: Office
+  id: 8
+  name: Site6
+- address: Helsinki, Finland
+  country_id: 9
+  description: Office
+  id: 9
+  name: Site7
+- address: Amsterdam, Netherlands
+  country_id: 10
+  description: Office
+  id: 10
+  name: Site8

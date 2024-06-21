@@ -31,6 +31,7 @@ type Tenant struct {
     UpdatedBy string `json:"updated_by"`
         Name string `json:"name"`
     Description string `json:"description"`
+    Email string `json:"email"`
 
 }
 

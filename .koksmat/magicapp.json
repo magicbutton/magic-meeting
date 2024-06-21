@@ -202,20 +202,42 @@
   "entities": {
     "tenant": {
       "name": "tenant",
-      "description": "User",
       "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "displayname": "Tenant",
+          "hidden": true,
+          "required": true
+        },
+        {
+          "name": "searchindex",
+          "type": "string",
+          "displayname": "Search Index",
+          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+          "hidden": true,
+          "required": true
+        },
         {
           "name": "name",
           "type": "string",
+          "displayname": "Name",
           "required": true
         },
         {
           "name": "description",
+          "displayname": "Description",
           "type": "string",
           "required": false
         }
       ],
-      "additionalattributes": null
+      "additionalattributes": [
+        {
+          "name": "email",
+          "type": "string",
+          "required": true
+        }
+      ]
     },
     "user": {
       "name": "user",
@@ -7968,20 +7990,42 @@
         "objectname": "Tenant",
         "entity": {
           "name": "tenant",
-          "description": "User",
           "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "displayname": "Tenant",
+              "hidden": true,
+              "required": true
+            },
+            {
+              "name": "searchindex",
+              "type": "string",
+              "displayname": "Search Index",
+              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+              "hidden": true,
+              "required": true
+            },
             {
               "name": "name",
               "type": "string",
+              "displayname": "Name",
               "required": true
             },
             {
               "name": "description",
+              "displayname": "Description",
               "type": "string",
               "required": false
             }
           ],
-          "additionalattributes": null
+          "additionalattributes": [
+            {
+              "name": "email",
+              "type": "string",
+              "required": true
+            }
+          ]
         }
       },
       "methods": [

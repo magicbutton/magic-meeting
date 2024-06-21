@@ -20,6 +20,7 @@ export interface AppMap {
 export const pagemap : AppMap = {
   "services": [
     {
+      "name": "user",
       "endpoints": [
         {
           "name": "read"
@@ -36,10 +37,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "user"
+      ]
     },
     {
+      "name": "apikey",
       "endpoints": [
         {
           "name": "read"
@@ -56,10 +57,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "apikey"
+      ]
     },
     {
+      "name": "communicationchannel",
       "endpoints": [
         {
           "name": "read"
@@ -76,10 +77,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "communicationchannel"
+      ]
     },
     {
+      "name": "messagetemplates",
       "endpoints": [
         {
           "name": "read"
@@ -96,10 +97,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "messagetemplates"
+      ]
     },
     {
+      "name": "country",
       "endpoints": [
         {
           "name": "read"
@@ -116,10 +117,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "country"
+      ]
     },
     {
+      "name": "site",
       "endpoints": [
         {
           "name": "read"
@@ -136,10 +137,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "site"
+      ]
     },
     {
+      "name": "vendor",
       "endpoints": [
         {
           "name": "read"
@@ -156,10 +157,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "vendor"
+      ]
     },
     {
+      "name": "task",
       "endpoints": [
         {
           "name": "read"
@@ -176,10 +177,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "task"
+      ]
     },
     {
+      "name": "signal",
       "endpoints": [
         {
           "name": "read"
@@ -196,10 +197,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "signal"
+      ]
     },
     {
+      "name": "servicecatalogue",
       "endpoints": [
         {
           "name": "read"
@@ -216,10 +217,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "servicecatalogue"
+      ]
     },
     {
+      "name": "serviceorder",
       "endpoints": [
         {
           "name": "read"
@@ -236,10 +237,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "serviceorder"
+      ]
     },
     {
+      "name": "service",
       "endpoints": [
         {
           "name": "read"
@@ -256,10 +257,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "service"
+      ]
     },
     {
+      "name": "servicecategory",
       "endpoints": [
         {
           "name": "read"
@@ -276,10 +277,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "servicecategory"
+      ]
     },
     {
+      "name": "productionorder",
       "endpoints": [
         {
           "name": "read"
@@ -296,10 +297,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "productionorder"
+      ]
     },
     {
+      "name": "meeting",
       "endpoints": [
         {
           "name": "read"
@@ -316,10 +317,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "meeting"
+      ]
     },
     {
+      "name": "accesspass",
       "endpoints": [
         {
           "name": "read"
@@ -336,10 +337,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "accesspass"
+      ]
     },
     {
+      "name": "accesspoint",
       "endpoints": [
         {
           "name": "read"
@@ -356,10 +357,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "accesspoint"
+      ]
     },
     {
+      "name": "auditlog",
       "endpoints": [
         {
           "name": "read"
@@ -376,10 +377,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "auditlog"
+      ]
     },
     {
+      "name": "visitor",
       "endpoints": [
         {
           "name": "read"
@@ -396,10 +397,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "visitor"
+      ]
     },
     {
+      "name": "messagelog",
       "endpoints": [
         {
           "name": "read"
@@ -416,10 +417,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "messagelog"
+      ]
     },
     {
+      "name": "transaction",
       "endpoints": [
         {
           "name": "read"
@@ -436,10 +437,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "transaction"
+      ]
     },
     {
+      "name": "meetingroom",
       "endpoints": [
         {
           "name": "read"
@@ -456,10 +457,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "meetingroom"
+      ]
     },
     {
+      "name": "building",
       "endpoints": [
         {
           "name": "read"
@@ -476,10 +477,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "building"
+      ]
     },
     {
+      "name": "importdata",
       "endpoints": [
         {
           "name": "read"
@@ -496,10 +497,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "importdata"
+      ]
     },
     {
+      "name": "tenant",
       "endpoints": [
         {
           "name": "read"
@@ -516,10 +517,10 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "tenant"
+      ]
     },
     {
+      "name": "meetingrole",
       "endpoints": [
         {
           "name": "read"
@@ -536,8 +537,7 @@ export const pagemap : AppMap = {
         {
           "name": "search"
         }
-      ],
-      "name": "meetingrole"
+      ]
     }
   ],
   "name": "people"

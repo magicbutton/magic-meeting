@@ -19,8 +19,11 @@ CREATE TABLE public.tenant
     updated_by character varying COLLATE pg_catalog."default" ,
 
     deleted_at timestamp with time zone
+    ,tenant character varying COLLATE pg_catalog."default"  NOT NULL
+    ,searchindex character varying COLLATE pg_catalog."default"  NOT NULL
     ,name character varying COLLATE pg_catalog."default"  NOT NULL
     ,description character varying COLLATE pg_catalog."default" 
+    ,email character varying COLLATE pg_catalog."default"  NOT NULL
 
 
 );

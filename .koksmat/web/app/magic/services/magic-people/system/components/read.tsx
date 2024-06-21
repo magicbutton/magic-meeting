@@ -16,7 +16,7 @@ export default function ReadSystem(props: { id: number }) {
   const { id } = props;
   const [transactionId, settransactionId] = useState(0);
   const readResult = useService<SystemItem>(
-    "magic-people.system",
+    "magic-meeting.system",
     ["read", id?.toString()],
     "",
     6000,

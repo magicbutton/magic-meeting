@@ -16,9 +16,9 @@ import (
 
 	"github.com/swaggest/usecase"
 
-	"github.com/magicbutton/magic-people/execution"
-	"github.com/magicbutton/magic-people/schemas"
-	"github.com/magicbutton/magic-people/utils"
+	"github.com/magicbutton/magic-meeting/execution"
+	"github.com/magicbutton/magic-meeting/schemas"
+	"github.com/magicbutton/magic-meeting/utils"
 )
 
 func UsecasesGetUserPost() usecase.Interactor {
@@ -27,12 +27,12 @@ func UsecasesGetUserPost() usecase.Interactor {
 	}
 	u := usecase.NewInteractor(func(ctx context.Context, input Request, output *schemas.User) error {
 
-		_, err := execution.ExecutePowerShell("john", "*", "magic-people", "05-usecases", "10-get-user.ps1", "", "-userid", input.Userid)
+		_, err := execution.ExecutePowerShell("john", "*", "magic-meeting", "05-usecases", "10-get-user.ps1", "", "-userid", input.Userid)
 		if err != nil {
 			return err
 		}
 
-		resultingFile := path.Join(utils.WorkDir("magic-people"), "user.json")
+		resultingFile := path.Join(utils.WorkDir("magic-meeting"), "user.json")
 		data, err := os.ReadFile(resultingFile)
 		if err != nil {
 			return err

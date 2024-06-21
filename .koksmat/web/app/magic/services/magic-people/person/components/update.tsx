@@ -17,7 +17,7 @@ export default function UpdatePerson(props: { id: number }) {
 
   const [transactionId, settransactionId] = useState(0);
   const readResult = useService<PersonItem>(
-    "magic-people.person",
+    "magic-meeting.person",
     ["read", id?.toString()],
     "",
     6000,

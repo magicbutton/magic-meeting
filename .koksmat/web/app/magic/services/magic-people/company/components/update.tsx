@@ -17,7 +17,7 @@ export default function UpdateCompany(props: { id: number }) {
 
   const [transactionId, settransactionId] = useState(0);
   const readResult = useService<CompanyItem>(
-    "magic-people.company",
+    "magic-meeting.company",
     ["read", id?.toString()],
     "",
     6000,

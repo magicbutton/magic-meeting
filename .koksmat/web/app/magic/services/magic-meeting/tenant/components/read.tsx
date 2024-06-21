@@ -29,11 +29,14 @@ export default function ReadTenant(props: { id: number }) {
           
     {tenant && <div>
         <div>
-        <div className="font-bold" >name</div>
+        <div className="font-bold" >Name</div>
         <div>{tenant.name}</div>
     </div>    <div>
-        <div className="font-bold" >description</div>
+        <div className="font-bold" >Description</div>
         <div>{tenant.description}</div>
+    </div>    <div>
+        <div className="font-bold" >email</div>
+        <div>{tenant.email}</div>
     </div>
     <div>
         <div>
