@@ -43,7 +43,7 @@ const formSchema = z.object({
 
 type FormSchema = z.infer<typeof formSchema>;
 
-export default function Component() {
+export default function NewMeetingForm() {
   const {
     register,
     handleSubmit,
