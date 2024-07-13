@@ -1,0 +1,120 @@
+/* 
+File have been automatically created. To prevent the file from getting overwritten
+set the Front Matter property ´keep´ to ´true´ syntax for the code snippet
+---
+keep: false
+---
+*/   
+
+
+-- sherry sild
+
+CREATE OR REPLACE PROCEDURE proc.update_accesspass(
+    p_actor_name VARCHAR,
+    p_params JSONB
+)
+LANGUAGE plpgsql
+AS $BODY$
+DECLARE
+    v_id INTEGER;
+       v_rows_updated INTEGER;
+v_tenant VARCHAR COLLATE pg_catalog."default" ;
+    v_searchindex VARCHAR COLLATE pg_catalog."default" ;
+    v_name VARCHAR COLLATE pg_catalog."default" ;
+    v_description VARCHAR COLLATE pg_catalog."default";
+    v_visitor_id INTEGER;
+    v_validfrom TIMESTAMP WITH TIME ZONE;
+    v_validto TIMESTAMP WITH TIME ZONE;
+    v_status VARCHAR;
+        v_audit_id integer;  -- Variable to hold the OUT parameter value
+    p_auditlog_params jsonb;
+
+    
+BEGIN
+    v_id := p_params->>'id';
+    v_tenant := p_params->>'tenant';
+    v_searchindex := p_params->>'searchindex';
+    v_name := p_params->>'name';
+    v_description := p_params->>'description';
+    v_visitor_id := p_params->>'visitor_id';
+    v_validfrom := p_params->>'validfrom';
+    v_validto := p_params->>'validto';
+    v_status := p_params->>'status';
+         
+    
+        
+    UPDATE public.accesspass
+    SET updated_by = p_actor_name,
+        updated_at = CURRENT_TIMESTAMP,
+        tenant = v_tenant,
+        searchindex = v_searchindex,
+        name = v_name,
+        description = v_description,
+        visitor_id = v_visitor_id,
+        validfrom = v_validfrom,
+        validto = v_validto,
+        status = v_status
+    WHERE id = v_id;
+
+    GET DIAGNOSTICS v_rows_updated = ROW_COUNT;
+    
+    IF v_rows_updated < 1 THEN
+        RAISE EXCEPTION 'No records updated. accesspass ID % not found', v_id ;
+    END IF;
+
+           p_auditlog_params := jsonb_build_object(
+        'tenant', '',
+        'searchindex', '',
+        'name', 'update_accesspass',
+        'status', 'success',
+        'description', '',
+        'action', 'update_accesspass',
+        'entity', 'accesspass',
+        'entityid', -1,
+        'actor', p_actor_name,
+        'metadata', p_params
+    );
+/*###MAGICAPP-START##
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://booking.services.koksmat.com/.schema.json",
+   
+  "type": "object",
+
+  "properties": {
+    "title": "Update AccessPass",
+  "description": "Update operation",
+  
+    "tenant": { 
+    "type": "string",
+    "description":"" },
+    "searchindex": { 
+    "type": "string",
+    "description":"Search Index is used for concatenating all searchable fields in a single field making in easier to search\n" },
+    "name": { 
+    "type": "string",
+    "description":"" },
+    "description": { 
+    "type": "string",
+    "description":"" },
+    "visitor_id": { 
+    "type": "number",
+    "description":"" },
+    "validfrom": { 
+    "type": "string",
+    "description":"" },
+    "validto": { 
+    "type": "string",
+    "description":"" },
+    "status": { 
+    "type": "string",
+    "description":"" }
+
+    }
+}
+##MAGICAPP-END##*/
+END;
+$BODY$
+;
+
+

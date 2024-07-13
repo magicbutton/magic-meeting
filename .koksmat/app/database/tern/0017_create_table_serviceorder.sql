@@ -27,6 +27,7 @@ CREATE TABLE public.serviceorder
     ,deliverto_id int  
     ,status character varying COLLATE pg_catalog."default"  NOT NULL
     ,payment_id int  
+    ,orderdata JSONB  
 
 
 );

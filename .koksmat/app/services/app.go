@@ -38,6 +38,10 @@ func HandleAppRequests(req micro.Request) {
 
 	case "select":
 		ProcessAppRequest(req, app.Select)
+	case "process":
+		ProcessAppRequest(req, app.Process)		
+	case "microsoft":
+		ProcessAppRequest(req, app.Select)
 	default:
 		ServiceResponseError(req, "Unknown command")
 	}
