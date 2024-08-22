@@ -17,16 +17,16 @@ CREATE OR REPLACE PROCEDURE proc.create_auditlog(
 LANGUAGE plpgsql
 AS $BODY$
 DECLARE
-       v_rows_updated INTEGER;
-v_tenant VARCHAR COLLATE pg_catalog."default" ;
+    v_tenant VARCHAR COLLATE pg_catalog."default" ;
     v_searchindex VARCHAR COLLATE pg_catalog."default" ;
     v_name VARCHAR COLLATE pg_catalog."default" ;
     v_description VARCHAR COLLATE pg_catalog."default";
     v_action VARCHAR;
-    v_user_id INTEGER;
+    v_status VARCHAR;
     v_entity VARCHAR;
     v_entityid VARCHAR;
-    v_timestamp TIMESTAMP WITH TIME ZONE;
+    v_actor VARCHAR;
+    v_metadata JSONB;
         v_audit_id integer;  -- Variable to hold the OUT parameter value
     p_auditlog_params jsonb;
 
@@ -36,10 +36,11 @@ BEGIN
     v_name := p_params->>'name';
     v_description := p_params->>'description';
     v_action := p_params->>'action';
-    v_user_id := p_params->>'user_id';
+    v_status := p_params->>'status';
     v_entity := p_params->>'entity';
     v_entityid := p_params->>'entityid';
-    v_timestamp := p_params->>'timestamp';
+    v_actor := p_params->>'actor';
+    v_metadata := p_params->>'metadata';
          
 
     INSERT INTO public.auditlog (
@@ -53,10 +54,11 @@ BEGIN
         name,
         description,
         action,
-        user_id,
+        --status,
         entity,
         entityid,
-        timestamp
+        actor,
+        metadata
     )
     VALUES (
         DEFAULT,
@@ -69,76 +71,15 @@ BEGIN
         v_name,
         v_description,
         v_action,
-        v_user_id,
+       -- v_status,
         v_entity,
         v_entityid,
-        v_timestamp
+        v_actor,
+        v_metadata
     )
     RETURNING id INTO p_id;
 
-       p_auditlog_params := jsonb_build_object(
-        'tenant', '',
-        'searchindex', '',
-        'name', 'create_auditlog',
-        'status', 'success',
-        'description', '',
-        'action', 'create_auditlog',
-        'entity', 'auditlog',
-        'entityid', -1,
-        'actor', p_actor_name,
-        'metadata', p_params
-    );
-/*###MAGICAPP-START##
-{
-   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://booking.services.koksmat.com/.schema.json",
-   
-  "type": "object",
-
-  "title": "Create AuditLog",
-  "description": "Create operation",
-
-  "properties": {
-  
-    "tenant": { 
-    "type": "string",
-    "description":"" },
-    "searchindex": { 
-    "type": "string",
-    "description":"Search Index is used for concatenating all searchable fields in a single field making in easier to search\n" },
-    "name": { 
-    "type": "string",
-    "description":"" },
-    "description": { 
-    "type": "string",
-    "description":"" },
-    "action": { 
-    "type": "string",
-    "description":"" },
-    "user_id": { 
-    "type": "number",
-    "description":"" },
-    "entity": { 
-    "type": "string",
-    "description":"" },
-    "entityid": { 
-    "type": "string",
-    "description":"" },
-    "timestamp": { 
-    "type": "string",
-    "description":"" }
-
-    }
-}
-
-##MAGICAPP-END##*/
-
-    -- Call the create_auditlog procedure
-    -- CALL proc.create_auditlog(p_actor_name, p_auditlog_params, v_audit_id);
+      
 END;
 $BODY$
 ;
-
-
-
-

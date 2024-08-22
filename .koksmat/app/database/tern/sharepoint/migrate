@@ -1,0 +1,68 @@
+-- --
+-- drop view if exists sharepoint.cava3_rooms cascade;create or replace view sharepoint.cava3_rooms as
+-- select 
+-- field ->> 'id' as id,
+
+-- field ->> 'Title' as title,
+-- field ->> 'Email' as email,
+-- field ->> 'Provisioning_x0020_Status' as provisioning_status,
+-- field ->> 'FloorLookupId' as floor_lookup_id,
+-- field ->> 'Capacity' as capacity,
+-- field ->> 'ManagedBy' as managed_by,
+-- field ->> 'RestrictedTo' as restricted_to,
+-- field ->> 'RestrictedToPeople' as restricted_to_people
+
+-- --,*
+-- from sharepoint.cava3
+-- where listname = 'Rooms'
+
+ CREATE TABLE if not exists sharepoint.migration (
+    site TEXT NOT NULL,
+    list TEXT NOT NULL,
+    from_id INTEGER NOT NULL,
+    to_id INTEGER NOT NULL,
+    PRIMARY KEY (site, list, from_id)
+);
+
+DO $$
+DECLARE
+    rec RECORD;
+    new_to_id INTEGER;
+    result jsonb;
+    actor_name VARCHAR := 'niels.johansen@nexigroup.com';
+    params jsonb;
+    sitename TEXT := 'cava3'; -- Replace with actual site name
+    listname TEXT := 'countries'; -- Replace with actual list name
+BEGIN
+    -- Iterate over each row in view X
+    FOR rec IN
+        SELECT * FROM sharepoint.cava3_countries
+    LOOP
+        -- Check if the current id exists in sharepoint.migration for the given site and list
+        IF NOT EXISTS (
+            SELECT 1
+            FROM sharepoint.migration
+            WHERE site = sitename
+            AND list = listname
+            AND from_id = rec.id
+        ) THEN
+
+            params := jsonb_build_object(
+                'tenant', '',
+                'searchindex', '',
+                'name', rec.title,
+                'description', rec.flag,
+                'code', rec.title
+            );
+
+                -- Call the function
+            result := proc.create_country(actor_name, params);
+
+
+
+            -- Insert a record into sharepoint.migration with site, list, from_id, and to_id
+            INSERT INTO sharepoint.migration (site, list, from_id, to_id)
+            VALUES (sitename, listname, rec.id, result ->> 'id'::INTEGER);
+        END IF;
+    END LOOP;
+END $$;
