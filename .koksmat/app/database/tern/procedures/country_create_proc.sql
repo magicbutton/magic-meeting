@@ -23,6 +23,7 @@ v_tenant VARCHAR COLLATE pg_catalog."default" ;
     v_name VARCHAR COLLATE pg_catalog."default" ;
     v_description VARCHAR COLLATE pg_catalog."default";
     v_code VARCHAR;
+    v_currency VARCHAR;
     v_id INTEGER;
         v_audit_id integer;  -- Variable to hold the OUT parameter value
     p_auditlog_params jsonb;
@@ -33,6 +34,7 @@ BEGIN
     v_name := p_params->>'name';
     v_description := p_params->>'description';
     v_code := p_params->>'code';
+    v_currency := p_params->>'currency';
          
 
     INSERT INTO public.country (
@@ -45,7 +47,8 @@ BEGIN
         searchindex,
         name,
         description,
-        code
+        code,
+        currency
     )
     VALUES (
         DEFAULT,
@@ -57,7 +60,8 @@ BEGIN
         v_searchindex,
         v_name,
         v_description,
-        v_code
+        v_code,
+        v_currency
     )
     RETURNING id INTO v_id;
 
@@ -98,6 +102,9 @@ BEGIN
     "type": "string",
     "description":"" },
     "code": { 
+    "type": "string",
+    "description":"" },
+    "currency": { 
     "type": "string",
     "description":"" }
 

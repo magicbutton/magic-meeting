@@ -9,7 +9,7 @@ keep: false
 
 -- sure sild
 
-CREATE TABLE public.user
+CREATE TABLE public.floor
 (
     id SERIAL PRIMARY KEY,
     created_at timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -32,7 +32,7 @@ CREATE TABLE public.user
     ,searchindex character varying COLLATE pg_catalog."default"  NOT NULL
     ,name character varying COLLATE pg_catalog."default"  NOT NULL
     ,description character varying COLLATE pg_catalog."default" 
-    ,email character varying COLLATE pg_catalog."default"  NOT NULL
+    ,building character varying COLLATE pg_catalog."default"  NOT NULL
 
 
 );
@@ -42,5 +42,5 @@ CREATE TABLE public.user
 
 ---- create above / drop below ----
 
-DROP TABLE public.user;
+DROP TABLE public.floor;
 

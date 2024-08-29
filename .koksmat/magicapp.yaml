@@ -117,6 +117,49 @@ entities:
       - name: code
         type: string
         required: true
+      - name: currency
+        type: string
+        required: true
+  businesshours: &businesshours
+    name: businesshours
+    description: Business Hours
+    baselineattributes: *recordAttributes
+    additionalattributes:
+      - name: country
+        type: reference
+        entity: *country
+        required: true
+
+      - name: firstdayinweek
+        type: string
+        required: true
+      - name: open
+        type: string
+        required: true
+      - name: close
+        type: string
+        required: true
+      - name: timezone
+        type: string
+        required: true
+  holidays: &holidays
+    name: holidays
+    description: Holidays
+    baselineattributes: *recordAttributes
+    additionalattributes:
+      - name: country
+        type: reference
+        entity: *country
+        required: true
+      - name: fromhour
+        type: string
+        required: true
+      - name: tohour
+        type: string
+        required: true
+      - name: date
+        type: datetime
+        required: true
   site: &site
     name: site
     description: Site
@@ -128,6 +171,10 @@ entities:
       - name: country
         type: reference
         entity: *country
+        required: true
+      - name: businesshours
+        type: reference
+        entity: *businesshours
         required: true
   building: &building
     name: building
@@ -527,6 +574,7 @@ entities:
         type: json
         hidden: false
         required: true
+
   # changeLog: &changeLog
   #   name: changeLog
   #   description: Change Log
@@ -551,6 +599,18 @@ entities:
   #     - name: data
   #       type: json
   #       required: true
+  koksmat_model: &koksmat_model
+    name: koksmat_model
+    description: Koksmat model
+    baselineattributes: *recordAttributes
+    additionalattributes:
+      - name: data
+        type: json
+        required: true
+      # - name: session
+      #   type: reference
+      #   entity: *session
+      #   required: true
 models:
   itemMethods: &itemMethods
     - name: read
@@ -844,4 +904,31 @@ services:
       model: graphcache
       objectname: GraphCache
       entity: *graphcache
+    methods: *itemMethods
+
+  - name: holidays
+    description: Manage Holidays
+    entity:
+      type: record
+      model: holidays
+      objectname: Holidays
+      entity: *holidays
+    methods: *itemMethods
+
+  - name: businesshours
+    description: Manage Business Hours
+    entity:
+      type: record
+      model: businesshours
+      objectname: BusinessHours
+      entity: *businesshours
+    methods: *itemMethods
+
+  - name: koksmat_model
+    description: Manage Koksmat model
+    entity:
+      type: koksmat_model
+      model: koksmat_model
+      objectname: KoksmatModel
+      entity: *koksmat_model
     methods: *itemMethods

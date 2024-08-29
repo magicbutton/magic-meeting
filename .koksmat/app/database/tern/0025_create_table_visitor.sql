@@ -9,7 +9,7 @@ keep: false
 
 -- sure sild
 
-CREATE TABLE public.user
+CREATE TABLE public.visitor
 (
     id SERIAL PRIMARY KEY,
     created_at timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -33,14 +33,24 @@ CREATE TABLE public.user
     ,name character varying COLLATE pg_catalog."default"  NOT NULL
     ,description character varying COLLATE pg_catalog."default" 
     ,email character varying COLLATE pg_catalog."default"  NOT NULL
+    ,phone character varying COLLATE pg_catalog."default"  NOT NULL
+    ,company character varying COLLATE pg_catalog."default"  NOT NULL
+    ,purpose character varying COLLATE pg_catalog."default"  NOT NULL
+    ,host_id int   NOT NULL
+    ,status character varying COLLATE pg_catalog."default"  NOT NULL
 
 
 );
 
-
+                ALTER TABLE IF EXISTS public.visitor
+                ADD FOREIGN KEY (host_id)
+                REFERENCES public.user (id) MATCH SIMPLE
+                ON UPDATE NO ACTION
+                ON DELETE NO ACTION
+                NOT VALID;
 
 
 ---- create above / drop below ----
 
-DROP TABLE public.user;
+DROP TABLE public.visitor;
 

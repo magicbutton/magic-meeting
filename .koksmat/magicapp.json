@@ -333,6 +333,216 @@
           "name": "code",
           "type": "string",
           "required": true
+        },
+        {
+          "name": "currency",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "businesshours": {
+      "name": "businesshours",
+      "description": "Business Hours",
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "displayname": "Tenant",
+          "hidden": true,
+          "required": true
+        },
+        {
+          "name": "searchindex",
+          "type": "string",
+          "displayname": "Search Index",
+          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+          "hidden": true,
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "displayname": "Name",
+          "required": true
+        },
+        {
+          "name": "description",
+          "displayname": "Description",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "additionalattributes": [
+        {
+          "name": "country",
+          "type": "reference",
+          "entity": {
+            "name": "country",
+            "description": "Country",
+            "baselineattributes": [
+              {
+                "name": "tenant",
+                "type": "string",
+                "displayname": "Tenant",
+                "hidden": true,
+                "required": true
+              },
+              {
+                "name": "searchindex",
+                "type": "string",
+                "displayname": "Search Index",
+                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                "hidden": true,
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "displayname": "Name",
+                "required": true
+              },
+              {
+                "name": "description",
+                "displayname": "Description",
+                "type": "string",
+                "required": false
+              }
+            ],
+            "additionalattributes": [
+              {
+                "name": "code",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "currency",
+                "type": "string",
+                "required": true
+              }
+            ]
+          },
+          "required": true
+        },
+        {
+          "name": "firstdayinweek",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "open",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "close",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "timezone",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "holidays": {
+      "name": "holidays",
+      "description": "Holidays",
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "displayname": "Tenant",
+          "hidden": true,
+          "required": true
+        },
+        {
+          "name": "searchindex",
+          "type": "string",
+          "displayname": "Search Index",
+          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+          "hidden": true,
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "displayname": "Name",
+          "required": true
+        },
+        {
+          "name": "description",
+          "displayname": "Description",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "additionalattributes": [
+        {
+          "name": "country",
+          "type": "reference",
+          "entity": {
+            "name": "country",
+            "description": "Country",
+            "baselineattributes": [
+              {
+                "name": "tenant",
+                "type": "string",
+                "displayname": "Tenant",
+                "hidden": true,
+                "required": true
+              },
+              {
+                "name": "searchindex",
+                "type": "string",
+                "displayname": "Search Index",
+                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                "hidden": true,
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "displayname": "Name",
+                "required": true
+              },
+              {
+                "name": "description",
+                "displayname": "Description",
+                "type": "string",
+                "required": false
+              }
+            ],
+            "additionalattributes": [
+              {
+                "name": "code",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "currency",
+                "type": "string",
+                "required": true
+              }
+            ]
+          },
+          "required": true
+        },
+        {
+          "name": "fromhour",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "tohour",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "date",
+          "type": "datetime",
+          "required": true
         }
       ]
     },
@@ -412,6 +622,121 @@
             "additionalattributes": [
               {
                 "name": "code",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "currency",
+                "type": "string",
+                "required": true
+              }
+            ]
+          },
+          "required": true
+        },
+        {
+          "name": "businesshours",
+          "type": "reference",
+          "entity": {
+            "name": "businesshours",
+            "description": "Business Hours",
+            "baselineattributes": [
+              {
+                "name": "tenant",
+                "type": "string",
+                "displayname": "Tenant",
+                "hidden": true,
+                "required": true
+              },
+              {
+                "name": "searchindex",
+                "type": "string",
+                "displayname": "Search Index",
+                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                "hidden": true,
+                "required": true
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "displayname": "Name",
+                "required": true
+              },
+              {
+                "name": "description",
+                "displayname": "Description",
+                "type": "string",
+                "required": false
+              }
+            ],
+            "additionalattributes": [
+              {
+                "name": "country",
+                "type": "reference",
+                "entity": {
+                  "name": "country",
+                  "description": "Country",
+                  "baselineattributes": [
+                    {
+                      "name": "tenant",
+                      "type": "string",
+                      "displayname": "Tenant",
+                      "hidden": true,
+                      "required": true
+                    },
+                    {
+                      "name": "searchindex",
+                      "type": "string",
+                      "displayname": "Search Index",
+                      "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                      "hidden": true,
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "displayname": "Name",
+                      "required": true
+                    },
+                    {
+                      "name": "description",
+                      "displayname": "Description",
+                      "type": "string",
+                      "required": false
+                    }
+                  ],
+                  "additionalattributes": [
+                    {
+                      "name": "code",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "currency",
+                      "type": "string",
+                      "required": true
+                    }
+                  ]
+                },
+                "required": true
+              },
+              {
+                "name": "firstdayinweek",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "open",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "close",
+                "type": "string",
+                "required": true
+              },
+              {
+                "name": "timezone",
                 "type": "string",
                 "required": true
               }
@@ -538,6 +863,121 @@
                   "additionalattributes": [
                     {
                       "name": "code",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "currency",
+                      "type": "string",
+                      "required": true
+                    }
+                  ]
+                },
+                "required": true
+              },
+              {
+                "name": "businesshours",
+                "type": "reference",
+                "entity": {
+                  "name": "businesshours",
+                  "description": "Business Hours",
+                  "baselineattributes": [
+                    {
+                      "name": "tenant",
+                      "type": "string",
+                      "displayname": "Tenant",
+                      "hidden": true,
+                      "required": true
+                    },
+                    {
+                      "name": "searchindex",
+                      "type": "string",
+                      "displayname": "Search Index",
+                      "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                      "hidden": true,
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "displayname": "Name",
+                      "required": true
+                    },
+                    {
+                      "name": "description",
+                      "displayname": "Description",
+                      "type": "string",
+                      "required": false
+                    }
+                  ],
+                  "additionalattributes": [
+                    {
+                      "name": "country",
+                      "type": "reference",
+                      "entity": {
+                        "name": "country",
+                        "description": "Country",
+                        "baselineattributes": [
+                          {
+                            "name": "tenant",
+                            "type": "string",
+                            "displayname": "Tenant",
+                            "hidden": true,
+                            "required": true
+                          },
+                          {
+                            "name": "searchindex",
+                            "type": "string",
+                            "displayname": "Search Index",
+                            "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                            "hidden": true,
+                            "required": true
+                          },
+                          {
+                            "name": "name",
+                            "type": "string",
+                            "displayname": "Name",
+                            "required": true
+                          },
+                          {
+                            "name": "description",
+                            "displayname": "Description",
+                            "type": "string",
+                            "required": false
+                          }
+                        ],
+                        "additionalattributes": [
+                          {
+                            "name": "code",
+                            "type": "string",
+                            "required": true
+                          },
+                          {
+                            "name": "currency",
+                            "type": "string",
+                            "required": true
+                          }
+                        ]
+                      },
+                      "required": true
+                    },
+                    {
+                      "name": "firstdayinweek",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "open",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "close",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "timezone",
                       "type": "string",
                       "required": true
                     }
@@ -2187,6 +2627,121 @@
                       "name": "code",
                       "type": "string",
                       "required": true
+                    },
+                    {
+                      "name": "currency",
+                      "type": "string",
+                      "required": true
+                    }
+                  ]
+                },
+                "required": true
+              },
+              {
+                "name": "businesshours",
+                "type": "reference",
+                "entity": {
+                  "name": "businesshours",
+                  "description": "Business Hours",
+                  "baselineattributes": [
+                    {
+                      "name": "tenant",
+                      "type": "string",
+                      "displayname": "Tenant",
+                      "hidden": true,
+                      "required": true
+                    },
+                    {
+                      "name": "searchindex",
+                      "type": "string",
+                      "displayname": "Search Index",
+                      "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                      "hidden": true,
+                      "required": true
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "displayname": "Name",
+                      "required": true
+                    },
+                    {
+                      "name": "description",
+                      "displayname": "Description",
+                      "type": "string",
+                      "required": false
+                    }
+                  ],
+                  "additionalattributes": [
+                    {
+                      "name": "country",
+                      "type": "reference",
+                      "entity": {
+                        "name": "country",
+                        "description": "Country",
+                        "baselineattributes": [
+                          {
+                            "name": "tenant",
+                            "type": "string",
+                            "displayname": "Tenant",
+                            "hidden": true,
+                            "required": true
+                          },
+                          {
+                            "name": "searchindex",
+                            "type": "string",
+                            "displayname": "Search Index",
+                            "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                            "hidden": true,
+                            "required": true
+                          },
+                          {
+                            "name": "name",
+                            "type": "string",
+                            "displayname": "Name",
+                            "required": true
+                          },
+                          {
+                            "name": "description",
+                            "displayname": "Description",
+                            "type": "string",
+                            "required": false
+                          }
+                        ],
+                        "additionalattributes": [
+                          {
+                            "name": "code",
+                            "type": "string",
+                            "required": true
+                          },
+                          {
+                            "name": "currency",
+                            "type": "string",
+                            "required": true
+                          }
+                        ]
+                      },
+                      "required": true
+                    },
+                    {
+                      "name": "firstdayinweek",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "open",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "close",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "timezone",
+                      "type": "string",
+                      "required": true
                     }
                   ]
                 },
@@ -3194,6 +3749,46 @@
           "required": true
         }
       ]
+    },
+    "koksmat_model": {
+      "name": "koksmat_model",
+      "description": "Koksmat model",
+      "baselineattributes": [
+        {
+          "name": "tenant",
+          "type": "string",
+          "displayname": "Tenant",
+          "hidden": true,
+          "required": true
+        },
+        {
+          "name": "searchindex",
+          "type": "string",
+          "displayname": "Search Index",
+          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+          "hidden": true,
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "displayname": "Name",
+          "required": true
+        },
+        {
+          "name": "description",
+          "displayname": "Description",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "additionalattributes": [
+        {
+          "name": "data",
+          "type": "json",
+          "required": true
+        }
+      ]
     }
   },
   "models": {
@@ -3885,6 +4480,11 @@
               "name": "code",
               "type": "string",
               "required": true
+            },
+            {
+              "name": "currency",
+              "type": "string",
+              "required": true
             }
           ]
         }
@@ -4050,6 +4650,121 @@
                 "additionalattributes": [
                   {
                     "name": "code",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "currency",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              },
+              "required": true
+            },
+            {
+              "name": "businesshours",
+              "type": "reference",
+              "entity": {
+                "name": "businesshours",
+                "description": "Business Hours",
+                "baselineattributes": [
+                  {
+                    "name": "tenant",
+                    "type": "string",
+                    "displayname": "Tenant",
+                    "hidden": true,
+                    "required": true
+                  },
+                  {
+                    "name": "searchindex",
+                    "type": "string",
+                    "displayname": "Search Index",
+                    "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                    "hidden": true,
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "displayname": "Name",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "displayname": "Description",
+                    "type": "string",
+                    "required": false
+                  }
+                ],
+                "additionalattributes": [
+                  {
+                    "name": "country",
+                    "type": "reference",
+                    "entity": {
+                      "name": "country",
+                      "description": "Country",
+                      "baselineattributes": [
+                        {
+                          "name": "tenant",
+                          "type": "string",
+                          "displayname": "Tenant",
+                          "hidden": true,
+                          "required": true
+                        },
+                        {
+                          "name": "searchindex",
+                          "type": "string",
+                          "displayname": "Search Index",
+                          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                          "hidden": true,
+                          "required": true
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "displayname": "Name",
+                          "required": true
+                        },
+                        {
+                          "name": "description",
+                          "displayname": "Description",
+                          "type": "string",
+                          "required": false
+                        }
+                      ],
+                      "additionalattributes": [
+                        {
+                          "name": "code",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "currency",
+                          "type": "string",
+                          "required": true
+                        }
+                      ]
+                    },
+                    "required": true
+                  },
+                  {
+                    "name": "firstdayinweek",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "open",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "close",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "timezone",
                     "type": "string",
                     "required": true
                   }
@@ -6571,6 +7286,121 @@
                           "name": "code",
                           "type": "string",
                           "required": true
+                        },
+                        {
+                          "name": "currency",
+                          "type": "string",
+                          "required": true
+                        }
+                      ]
+                    },
+                    "required": true
+                  },
+                  {
+                    "name": "businesshours",
+                    "type": "reference",
+                    "entity": {
+                      "name": "businesshours",
+                      "description": "Business Hours",
+                      "baselineattributes": [
+                        {
+                          "name": "tenant",
+                          "type": "string",
+                          "displayname": "Tenant",
+                          "hidden": true,
+                          "required": true
+                        },
+                        {
+                          "name": "searchindex",
+                          "type": "string",
+                          "displayname": "Search Index",
+                          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                          "hidden": true,
+                          "required": true
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "displayname": "Name",
+                          "required": true
+                        },
+                        {
+                          "name": "description",
+                          "displayname": "Description",
+                          "type": "string",
+                          "required": false
+                        }
+                      ],
+                      "additionalattributes": [
+                        {
+                          "name": "country",
+                          "type": "reference",
+                          "entity": {
+                            "name": "country",
+                            "description": "Country",
+                            "baselineattributes": [
+                              {
+                                "name": "tenant",
+                                "type": "string",
+                                "displayname": "Tenant",
+                                "hidden": true,
+                                "required": true
+                              },
+                              {
+                                "name": "searchindex",
+                                "type": "string",
+                                "displayname": "Search Index",
+                                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                                "hidden": true,
+                                "required": true
+                              },
+                              {
+                                "name": "name",
+                                "type": "string",
+                                "displayname": "Name",
+                                "required": true
+                              },
+                              {
+                                "name": "description",
+                                "displayname": "Description",
+                                "type": "string",
+                                "required": false
+                              }
+                            ],
+                            "additionalattributes": [
+                              {
+                                "name": "code",
+                                "type": "string",
+                                "required": true
+                              },
+                              {
+                                "name": "currency",
+                                "type": "string",
+                                "required": true
+                              }
+                            ]
+                          },
+                          "required": true
+                        },
+                        {
+                          "name": "firstdayinweek",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "open",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "close",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "timezone",
+                          "type": "string",
+                          "required": true
                         }
                       ]
                     },
@@ -7684,6 +8514,121 @@
                           "name": "code",
                           "type": "string",
                           "required": true
+                        },
+                        {
+                          "name": "currency",
+                          "type": "string",
+                          "required": true
+                        }
+                      ]
+                    },
+                    "required": true
+                  },
+                  {
+                    "name": "businesshours",
+                    "type": "reference",
+                    "entity": {
+                      "name": "businesshours",
+                      "description": "Business Hours",
+                      "baselineattributes": [
+                        {
+                          "name": "tenant",
+                          "type": "string",
+                          "displayname": "Tenant",
+                          "hidden": true,
+                          "required": true
+                        },
+                        {
+                          "name": "searchindex",
+                          "type": "string",
+                          "displayname": "Search Index",
+                          "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                          "hidden": true,
+                          "required": true
+                        },
+                        {
+                          "name": "name",
+                          "type": "string",
+                          "displayname": "Name",
+                          "required": true
+                        },
+                        {
+                          "name": "description",
+                          "displayname": "Description",
+                          "type": "string",
+                          "required": false
+                        }
+                      ],
+                      "additionalattributes": [
+                        {
+                          "name": "country",
+                          "type": "reference",
+                          "entity": {
+                            "name": "country",
+                            "description": "Country",
+                            "baselineattributes": [
+                              {
+                                "name": "tenant",
+                                "type": "string",
+                                "displayname": "Tenant",
+                                "hidden": true,
+                                "required": true
+                              },
+                              {
+                                "name": "searchindex",
+                                "type": "string",
+                                "displayname": "Search Index",
+                                "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                                "hidden": true,
+                                "required": true
+                              },
+                              {
+                                "name": "name",
+                                "type": "string",
+                                "displayname": "Name",
+                                "required": true
+                              },
+                              {
+                                "name": "description",
+                                "displayname": "Description",
+                                "type": "string",
+                                "required": false
+                              }
+                            ],
+                            "additionalattributes": [
+                              {
+                                "name": "code",
+                                "type": "string",
+                                "required": true
+                              },
+                              {
+                                "name": "currency",
+                                "type": "string",
+                                "required": true
+                              }
+                            ]
+                          },
+                          "required": true
+                        },
+                        {
+                          "name": "firstdayinweek",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "open",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "close",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "timezone",
+                          "type": "string",
+                          "required": true
                         }
                       ]
                     },
@@ -8584,6 +9529,509 @@
               "name": "data",
               "type": "json",
               "hidden": false,
+              "required": true
+            }
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "read",
+          "description": "Read a single item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int64",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "create",
+          "description": "Create a new item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to create",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "update",
+          "description": "Update an existing item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to update",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete",
+          "description": "Delete an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int64",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "search",
+          "description": "Search for items",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "The search query",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "page"
+          }
+        }
+      ]
+    },
+    {
+      "name": "holidays",
+      "description": "Manage Holidays",
+      "entity": {
+        "type": "record",
+        "model": "holidays",
+        "objectname": "Holidays",
+        "entity": {
+          "name": "holidays",
+          "description": "Holidays",
+          "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "displayname": "Tenant",
+              "hidden": true,
+              "required": true
+            },
+            {
+              "name": "searchindex",
+              "type": "string",
+              "displayname": "Search Index",
+              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+              "hidden": true,
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "displayname": "Name",
+              "required": true
+            },
+            {
+              "name": "description",
+              "displayname": "Description",
+              "type": "string",
+              "required": false
+            }
+          ],
+          "additionalattributes": [
+            {
+              "name": "country",
+              "type": "reference",
+              "entity": {
+                "name": "country",
+                "description": "Country",
+                "baselineattributes": [
+                  {
+                    "name": "tenant",
+                    "type": "string",
+                    "displayname": "Tenant",
+                    "hidden": true,
+                    "required": true
+                  },
+                  {
+                    "name": "searchindex",
+                    "type": "string",
+                    "displayname": "Search Index",
+                    "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                    "hidden": true,
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "displayname": "Name",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "displayname": "Description",
+                    "type": "string",
+                    "required": false
+                  }
+                ],
+                "additionalattributes": [
+                  {
+                    "name": "code",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "currency",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              },
+              "required": true
+            },
+            {
+              "name": "fromhour",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "tohour",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "date",
+              "type": "datetime",
+              "required": true
+            }
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "read",
+          "description": "Read a single item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int64",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "create",
+          "description": "Create a new item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to create",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "update",
+          "description": "Update an existing item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to update",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete",
+          "description": "Delete an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int64",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "search",
+          "description": "Search for items",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "The search query",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "page"
+          }
+        }
+      ]
+    },
+    {
+      "name": "businesshours",
+      "description": "Manage Business Hours",
+      "entity": {
+        "type": "record",
+        "model": "businesshours",
+        "objectname": "BusinessHours",
+        "entity": {
+          "name": "businesshours",
+          "description": "Business Hours",
+          "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "displayname": "Tenant",
+              "hidden": true,
+              "required": true
+            },
+            {
+              "name": "searchindex",
+              "type": "string",
+              "displayname": "Search Index",
+              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+              "hidden": true,
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "displayname": "Name",
+              "required": true
+            },
+            {
+              "name": "description",
+              "displayname": "Description",
+              "type": "string",
+              "required": false
+            }
+          ],
+          "additionalattributes": [
+            {
+              "name": "country",
+              "type": "reference",
+              "entity": {
+                "name": "country",
+                "description": "Country",
+                "baselineattributes": [
+                  {
+                    "name": "tenant",
+                    "type": "string",
+                    "displayname": "Tenant",
+                    "hidden": true,
+                    "required": true
+                  },
+                  {
+                    "name": "searchindex",
+                    "type": "string",
+                    "displayname": "Search Index",
+                    "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+                    "hidden": true,
+                    "required": true
+                  },
+                  {
+                    "name": "name",
+                    "type": "string",
+                    "displayname": "Name",
+                    "required": true
+                  },
+                  {
+                    "name": "description",
+                    "displayname": "Description",
+                    "type": "string",
+                    "required": false
+                  }
+                ],
+                "additionalattributes": [
+                  {
+                    "name": "code",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "currency",
+                    "type": "string",
+                    "required": true
+                  }
+                ]
+              },
+              "required": true
+            },
+            {
+              "name": "firstdayinweek",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "open",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "close",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "timezone",
+              "type": "string",
+              "required": true
+            }
+          ]
+        }
+      },
+      "methods": [
+        {
+          "name": "read",
+          "description": "Read a single item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int64",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "create",
+          "description": "Create a new item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to create",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "update",
+          "description": "Update an existing item",
+          "parameters": [
+            {
+              "name": "item",
+              "description": "The item to update",
+              "type": "object",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "delete",
+          "description": "Delete an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "description": "The id of the item",
+              "type": "int64",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "void"
+          }
+        },
+        {
+          "name": "search",
+          "description": "Search for items",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "The search query",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "page"
+          }
+        }
+      ]
+    },
+    {
+      "name": "koksmat_model",
+      "description": "Manage Koksmat model",
+      "entity": {
+        "type": "koksmat_model",
+        "model": "koksmat_model",
+        "objectname": "KoksmatModel",
+        "entity": {
+          "name": "koksmat_model",
+          "description": "Koksmat model",
+          "baselineattributes": [
+            {
+              "name": "tenant",
+              "type": "string",
+              "displayname": "Tenant",
+              "hidden": true,
+              "required": true
+            },
+            {
+              "name": "searchindex",
+              "type": "string",
+              "displayname": "Search Index",
+              "description": "Search Index is used for concatenating all searchable fields in a single field making in easier to search\n",
+              "hidden": true,
+              "required": true
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "displayname": "Name",
+              "required": true
+            },
+            {
+              "name": "description",
+              "displayname": "Description",
+              "type": "string",
+              "required": false
+            }
+          ],
+          "additionalattributes": [
+            {
+              "name": "data",
+              "type": "json",
               "required": true
             }
           ]

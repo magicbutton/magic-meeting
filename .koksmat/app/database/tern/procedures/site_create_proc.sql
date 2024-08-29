@@ -24,6 +24,7 @@ v_tenant VARCHAR COLLATE pg_catalog."default" ;
     v_description VARCHAR COLLATE pg_catalog."default";
     v_address VARCHAR;
     v_country_id INTEGER;
+    v_businesshours_id INTEGER;
     v_id INTEGER;
         v_audit_id integer;  -- Variable to hold the OUT parameter value
     p_auditlog_params jsonb;
@@ -35,6 +36,7 @@ BEGIN
     v_description := p_params->>'description';
     v_address := p_params->>'address';
     v_country_id := p_params->>'country_id';
+    v_businesshours_id := p_params->>'businesshours_id';
          
 
     INSERT INTO public.site (
@@ -48,7 +50,8 @@ BEGIN
         name,
         description,
         address,
-        country_id
+        country_id,
+        businesshours_id
     )
     VALUES (
         DEFAULT,
@@ -61,7 +64,8 @@ BEGIN
         v_name,
         v_description,
         v_address,
-        v_country_id
+        v_country_id,
+        v_businesshours_id
     )
     RETURNING id INTO v_id;
 
@@ -105,6 +109,9 @@ BEGIN
     "type": "string",
     "description":"" },
     "country_id": { 
+    "type": "number",
+    "description":"" },
+    "businesshours_id": { 
     "type": "number",
     "description":"" }
 

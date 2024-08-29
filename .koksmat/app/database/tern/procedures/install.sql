@@ -112,4 +112,16 @@ CREATE SCHEMA "proc";{{ template "user_create_proc.sql".}}
 {{ template "graphcache_update_proc.sql".}} 
 {{ template "graphcache_delete_proc.sql".}} 
 {{ template "graphcache_undo_delete_proc.sql".}} 
+{{ template "holidays_create_proc.sql".}} 
+{{ template "holidays_update_proc.sql".}} 
+{{ template "holidays_delete_proc.sql".}} 
+{{ template "holidays_undo_delete_proc.sql".}} 
+{{ template "businesshours_create_proc.sql".}} 
+{{ template "businesshours_update_proc.sql".}} 
+{{ template "businesshours_delete_proc.sql".}} 
+{{ template "businesshours_undo_delete_proc.sql".}} 
+{{ template "koksmat_model_create_proc.sql".}} 
+{{ template "koksmat_model_update_proc.sql".}} 
+{{ template "koksmat_model_delete_proc.sql".}} 
+{{ template "koksmat_model_undo_delete_proc.sql".}} 
 

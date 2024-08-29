@@ -7,9 +7,9 @@ keep: false
 */   
 
 
--- sherry sild
+-- tomat sild
 
-CREATE OR REPLACE FUNCTION proc.update_site(
+CREATE OR REPLACE FUNCTION proc.create_koksmat_model(
     p_actor_name VARCHAR,
     p_params JSONB
    
@@ -17,58 +17,58 @@ CREATE OR REPLACE FUNCTION proc.update_site(
 RETURNS JSONB LANGUAGE plpgsql 
 AS $$
 DECLARE
-    v_id INTEGER;
        v_rows_updated INTEGER;
 v_tenant VARCHAR COLLATE pg_catalog."default" ;
     v_searchindex VARCHAR COLLATE pg_catalog."default" ;
     v_name VARCHAR COLLATE pg_catalog."default" ;
     v_description VARCHAR COLLATE pg_catalog."default";
-    v_address VARCHAR;
-    v_country_id INTEGER;
-    v_businesshours_id INTEGER;
+    v_data JSONB;
+    v_id INTEGER;
         v_audit_id integer;  -- Variable to hold the OUT parameter value
     p_auditlog_params jsonb;
 
-    
 BEGIN
-    v_id := p_params->>'id';
     v_tenant := p_params->>'tenant';
     v_searchindex := p_params->>'searchindex';
     v_name := p_params->>'name';
     v_description := p_params->>'description';
-    v_address := p_params->>'address';
-    v_country_id := p_params->>'country_id';
-    v_businesshours_id := p_params->>'businesshours_id';
+    v_data := p_params->>'data';
          
-    
-        
-    UPDATE public.site
-    SET updated_by = p_actor_name,
-        updated_at = CURRENT_TIMESTAMP,
-        tenant = v_tenant,
-        searchindex = v_searchindex,
-        name = v_name,
-        description = v_description,
-        address = v_address,
-        country_id = v_country_id,
-        businesshours_id = v_businesshours_id
-    WHERE id = v_id;
 
-    GET DIAGNOSTICS v_rows_updated = ROW_COUNT;
-    
-    IF v_rows_updated < 1 THEN
-        RAISE EXCEPTION 'No records updated. site ID % not found', v_id ;
-    END IF;
+    INSERT INTO public.koksmat_model (
+    id,
+    created_at,
+    updated_at,
+        created_by, 
+        updated_by, 
+        tenant,
+        searchindex,
+        name,
+        description,
+        data
+    )
+    VALUES (
+        DEFAULT,
+        DEFAULT,
+        DEFAULT,
+        p_actor_name, 
+        p_actor_name,  -- Use the same value for updated_by
+        v_tenant,
+        v_searchindex,
+        v_name,
+        v_description,
+        v_data
+    )
+    RETURNING id INTO v_id;
 
-
-           p_auditlog_params := jsonb_build_object(
+       p_auditlog_params := jsonb_build_object(
         'tenant', '',
         'searchindex', '',
-        'name', 'update_site',
+        'name', 'create_koksmat_model',
         'status', 'success',
         'description', '',
-        'action', 'update_site',
-        'entity', 'site',
+        'action', 'create_koksmat_model',
+        'entity', 'koksmat_model',
         'entityid', -1,
         'actor', p_actor_name,
         'metadata', p_params
@@ -80,9 +80,10 @@ BEGIN
    
   "type": "object",
 
+  "title": "Create KoksmatModel",
+  "description": "Create operation",
+
   "properties": {
-    "title": "Update Site",
-  "description": "Update operation",
   
     "tenant": { 
     "type": "string",
@@ -96,26 +97,26 @@ BEGIN
     "description": { 
     "type": "string",
     "description":"" },
-    "address": { 
-    "type": "string",
-    "description":"" },
-    "country_id": { 
-    "type": "number",
-    "description":"" },
-    "businesshours_id": { 
-    "type": "number",
+    "data": { 
+    "type": "object",
     "description":"" }
 
     }
 }
+
 ##MAGICAPP-END##*/
 
+    -- Call the create_auditlog procedure
+    CALL proc.create_auditlog(p_actor_name, p_auditlog_params, v_audit_id);
+
     return jsonb_build_object(
-    'comment','updated',
-    'id',v_id
-    );
+    'comment','created',
+    'id',v_id);
+
 END;
 $$ 
 ;
+
+
 
 

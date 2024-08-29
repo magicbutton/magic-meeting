@@ -9,7 +9,7 @@ keep: false
 
 -- sure sild
 
-CREATE TABLE public.user
+CREATE TABLE public.meetingroom
 (
     id SERIAL PRIMARY KEY,
     created_at timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -33,14 +33,22 @@ CREATE TABLE public.user
     ,name character varying COLLATE pg_catalog."default"  NOT NULL
     ,description character varying COLLATE pg_catalog."default" 
     ,email character varying COLLATE pg_catalog."default"  NOT NULL
+    ,capacity character varying COLLATE pg_catalog."default"   NOT NULL
+    ,features character varying COLLATE pg_catalog."default" 
+    ,floor_id int   NOT NULL
 
 
 );
 
-
+                ALTER TABLE IF EXISTS public.meetingroom
+                ADD FOREIGN KEY (floor_id)
+                REFERENCES public.floor (id) MATCH SIMPLE
+                ON UPDATE NO ACTION
+                ON DELETE NO ACTION
+                NOT VALID;
 
 
 ---- create above / drop below ----
 
-DROP TABLE public.user;
+DROP TABLE public.meetingroom;
 

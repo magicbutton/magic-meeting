@@ -24,6 +24,7 @@ v_tenant VARCHAR COLLATE pg_catalog."default" ;
     v_name VARCHAR COLLATE pg_catalog."default" ;
     v_description VARCHAR COLLATE pg_catalog."default";
     v_code VARCHAR;
+    v_currency VARCHAR;
         v_audit_id integer;  -- Variable to hold the OUT parameter value
     p_auditlog_params jsonb;
 
@@ -35,6 +36,7 @@ BEGIN
     v_name := p_params->>'name';
     v_description := p_params->>'description';
     v_code := p_params->>'code';
+    v_currency := p_params->>'currency';
          
     
         
@@ -45,7 +47,8 @@ BEGIN
         searchindex = v_searchindex,
         name = v_name,
         description = v_description,
-        code = v_code
+        code = v_code,
+        currency = v_currency
     WHERE id = v_id;
 
     GET DIAGNOSTICS v_rows_updated = ROW_COUNT;
@@ -91,6 +94,9 @@ BEGIN
     "type": "string",
     "description":"" },
     "code": { 
+    "type": "string",
+    "description":"" },
+    "currency": { 
     "type": "string",
     "description":"" }
 
